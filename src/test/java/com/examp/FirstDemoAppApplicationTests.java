@@ -1,7 +1,6 @@
 package com.examp;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.mock;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -13,7 +12,7 @@ import com.examp.services.DemoAppServices;
 @SpringBootTest
 class FirstDemoAppApplicationTests {
 	
-	@Mock
+	@Autowired
 	DemoAppServices demoserv;
 
 	@Test
