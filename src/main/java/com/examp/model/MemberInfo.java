@@ -23,6 +23,17 @@ public class MemberInfo {
 
 	public MemberInfo() {
 	}
+	
+	
+
+	public MemberInfo(int id, String name, String type) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.type = type;
+	}
+
+
 
 	public MemberInfo(String name, String type) {
 		this.name = name;

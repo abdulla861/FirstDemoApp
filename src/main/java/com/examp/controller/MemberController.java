@@ -14,9 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.examp.model.MemberInfo;
 import com.examp.repository.MemberRepository;
+import com.examp.services.MemberService;
 
 @RestController
 public class MemberController {
+	
+	@Autowired
+	MemberService memberService;
 	
 	@Autowired
 	MemberRepository memberRepository;
@@ -36,7 +40,7 @@ public class MemberController {
 	@GetMapping("/member/get/{name}")
 	public ResponseEntity<List<MemberInfo>> findByName(@PathVariable String name) {
 		try {
-			List<MemberInfo> memberList = memberRepository.findByNameContainingIgnoreCase(name);
+			List<MemberInfo> memberList = memberService.findByNameContainingIgnoreCase(name);
 			if (memberList.isEmpty()) {
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 			}

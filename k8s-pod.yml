@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: first-demo-app-rs
+  labels:
+    app: first-demo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: first-demo-app
+  template:
+    metadata:
+      name: first-demo-app
+      labels:
+        app: first-demo-app
+    spec:
+      containers:
+        - name: first-demo-app
+          image: abdulla861/first-demo-app.war
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
