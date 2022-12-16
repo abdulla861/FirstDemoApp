@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 public class DemoAppServices {
 	
 	public String getName(String name) {
-		return "Demo Services for " + name;
+		return "Demo Services for name" + name;
 	}
 
 }
